@@ -1,93 +1,99 @@
-name: Test Shell Commands
+name: Run Shell Commands
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
-  test-shell-commands:
+  run-shell-commands:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Run Linux Shell Commands
+      - name: Install required packages (for cal)
         run: |
-          echo "# Show current user"
+          sudo apt-get update
+          sudo apt-get install -y bsdmainutils
+
+      - name: Execute Shell Commands
+        run: |
+          echo "Show current user"
           whoami
 
-          echo "# Show current directory"
+          echo "Show current directory"
           pwd
 
-          echo "# List files in the current directory"
+          echo "List files in the current directory"
           ls -l
 
-          echo "# Create a new directory"
+          echo "Create a new directory"
           mkdir test_directory
 
-          echo "# Navigate into the new directory"
+          echo "Navigate into the new directory"
           cd test_directory
 
-          echo "# Create a new file"
+          echo "Create a new file"
           touch testfile.txt
 
-          echo "# Write some text into the file"
+          echo "Write some text into the file"
           echo 'This is a test file created in GitHub Actions' > testfile.txt
 
-          echo "# Display file content"
+          echo "Display file content"
           cat testfile.txt
 
-          echo "# Append more content to the file"
+          echo "Append more content to the file"
           echo 'Another line added.' >> testfile.txt
 
-          echo "# Show file content again"
+          echo "Show file content again"
           cat testfile.txt
 
-          echo "# Rename the file"
+          echo "Rename the file"
           mv testfile.txt renamed_file.txt
 
-          echo "# Copy the file"
+          echo "Copy the file"
           cp renamed_file.txt copy_of_file.txt
 
-          echo "# List all files again"
+          echo "List all files again"
           ls -l
 
-          echo "# Display disk usage of current directory"
+          echo "Display disk usage of current directory"
           du -sh .
 
-          echo "# Display free disk space"
+          echo "Display free disk space"
           df -h
 
-          echo "# Display current date and time"
+          echo "Display current date and time"
           date
 
-          echo "# Display calendar"
-          cal || echo "Note: 'cal' command may not be available by default on Ubuntu GitHub runners."
+          echo "Display calendar"
+          cal
 
-          echo "# Show system uptime"
+          echo "Show system uptime"
           uptime
 
-          echo "# Show hostname"
+          echo "Show hostname"
           hostname
 
-          echo "# Show kernel version"
+          echo "Show kernel version"
           uname -r
 
-          echo "# Show system information"
+          echo "Show system information"
           uname -a
 
-          echo "# Display currently running processes"
+          echo "Display currently running processes"
           ps aux | head -10
 
-          echo "# Sleep command for 2 seconds (simulate a wait)"
+          echo "Sleep command for 2 seconds (simulate a wait)"
           sleep 2
 
-          echo "# Remove copied file"
+          echo "Remove copied file"
           rm copy_of_file.txt
 
-          echo "# Go one level back"
+          echo "Go one level back"
           cd ..
 
-          echo "# Remove the directory created"
+          echo "Remove the directory created"
           rm -r test_directory
