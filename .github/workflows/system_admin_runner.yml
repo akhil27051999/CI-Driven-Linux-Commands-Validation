@@ -1,0 +1,31 @@
+name: Linux Sysadmin Command Runner
+
+on:
+  push:
+    paths:
+      - '**/*.txt'
+  workflow_dispatch:
+
+jobs:
+  run-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Execute all sysadmin command files
+        run: |
+          echo "Starting Execution of All Command Files..."
+          find . -type f -name "*.txt" | while read file; do
+            echo "Processing File: $file"
+            while IFS= read -r line || [[ -n "$line" ]]; do
+              # Skip comments and blank lines
+              if [[ -z "$line" || "$line" =~ ^# ]]; then
+                continue
+              fi
+              echo "Running: $line"
+              eval "$line"
+            done < "$file"
+            echo "Completed: $file"
+            echo "------------------------------------"
+          done
