@@ -1,45 +1,49 @@
 # Show all running processes
 ps aux
 
-# Show process tree
-pstree
+# Show processes for the current user
+ps -u $(whoami)
 
-# Show top CPU/memory-consuming processes
-top
+# Display top processes (limited to top 10 for GitHub Actions visibility)
+ps aux --sort=-%cpu | head -10
 
-# Interactive process viewer
-htop
+# Start a background process (sleep for 60 seconds)
+sleep 60 &
 
-# Kill a process by PID
-kill <pid>
-
-# Kill a process by name
-pkill firefox
-
-# Force kill a process
-kill -9 <pid>
-
-# Search for a process
-ps aux | grep apache
-
-# Start a process in background
-command &
-
-# Bring background process to foreground
-fg
-
-# Stop a running process
-Ctrl + C
-
-# Suspend a process (Ctrl + Z)
-# Resume a suspended process in background
-bg
-
-# List background jobs
+# Display jobs running in the current shell
 jobs
 
-# Monitor process stats with PID
-pidstat -p <pid>
+# Display process ID of sleep command
+pgrep sleep
 
-# Show CPU usage per process
-ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head
+# Use 'top' command for system monitoring (limited to 5 seconds output)
+top
+
+# Show system load average
+uptime
+
+# Kill a background process (example: kill sleep)
+pkill -f "sleep 60"
+
+# Kill a process by PID (example)
+# First, start a new process
+sleep 100 &
+# Then get its PID
+PID=$(pgrep -f "sleep 100")
+# Kill the process
+kill $PID
+
+# Display memory usage by processes
+ps aux --sort=-%mem | head -10
+
+# Check if a specific process is running (example: sleep)
+pgrep sleep && echo "Sleep process is running" || echo "Sleep process not running"
+
+# Show parent and child processes (hierarchical view)
+pstree -p | head -20
+
+# Display process start time
+ps -eo pid,etime,cmd | head -10
+
+# Show CPU and memory usage in % for each process
+ps -eo pid,%cpu,%mem,cmd --sort=-%cpu | head -10
