@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '.github/workflows/log-analysis.yml'
 
 jobs:
   log-analysis:
