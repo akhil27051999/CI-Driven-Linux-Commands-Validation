@@ -5,9 +5,6 @@ whoami
 sudo useradd akhil
 sudo useradd atchyuth
 
-# TO CREATE USER PASSWORD
-sudo passwd akhil
-
 # TO CHANGE TO NEW USER 
 su atchyuth
 
