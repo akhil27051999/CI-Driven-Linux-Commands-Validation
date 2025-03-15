@@ -5,9 +5,6 @@ whoami
 sudo useradd akhil
 sudo useradd atchyuth
 
-# TO CHANGE TO NEW USER 
-su atchyuth
-
 # TO DELETE USER
 sudo userdel atchyuth
 
