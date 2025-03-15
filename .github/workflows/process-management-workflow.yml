@@ -1,0 +1,69 @@
+name: Process Management Workflow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/process-management-workflow.yml'
+
+jobs:
+  process-management:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Run Process Management Commands
+        run: |
+          echo "Show all running processes"
+          ps aux
+
+          echo "Show processes for the current user"
+          ps -u $(whoami)
+
+          echo "Top 10 processes by CPU usage"
+          ps aux --sort=-%cpu | head -10
+
+          echo "Start a background process (sleep 60)"
+          sleep 60 &
+
+          echo "Show jobs running in current shell"
+          jobs
+
+          echo "Get PID of 'sleep' command"
+          pgrep sleep
+
+          echo "Display system monitoring using 'top' (limited to 5 seconds)"
+          timeout 5s top
+
+          echo "Show system load average"
+          uptime
+
+          echo "Kill background process (sleep)"
+          pkill -f "sleep 60" || echo "Sleep process already exited"
+
+          echo "Start a new sleep process (sleep 100)"
+          sleep 100 &
+          sleep 2  # wait a bit to ensure process starts
+
+          echo "Get PID of 'sleep 100'"
+          PID=$(pgrep -f "sleep 100")
+          echo "Killing PID: $PID"
+          kill $PID || echo "Process already exited"
+
+          echo "Display top 10 memory-consuming processes"
+          ps aux --sort=-%mem | head -10
+
+          echo "Check if any 'sleep' process is running"
+          pgrep sleep && echo "Sleep process is running" || echo "Sleep process not running"
+
+          echo "Show parent-child processes hierarchy"
+          pstree -p | head -20
+
+          echo "Show process start times"
+          ps -eo pid,etime,cmd | head -10
+
+          echo "Show CPU and memory usage for each process"
+          ps -eo pid,%cpu,%mem,cmd --sort=-%cpu | head -10
