@@ -3,6 +3,7 @@ whoami
 
 # TO CREATE USER
 sudo useradd akhil
+sudo useradd atchyuth
 
 # TO DELETE USER
 sudo userdel atchyuth
