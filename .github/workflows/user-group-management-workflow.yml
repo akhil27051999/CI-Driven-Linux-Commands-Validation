@@ -1,0 +1,99 @@
+name: User and Group Management Workflow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '.github/workflows/user-group-management-workflow.yml'
+
+jobs:
+  user-group-management:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Run User and Group Management Commands
+        run: |
+          echo "Check current logged-in user"
+          whoami
+
+          echo "Display current user ID and group ID"
+          id
+
+          echo "Show all users on the system"
+          cut -d: -f1 /etc/passwd
+
+          echo "Show all groups on the system"
+          cut -d: -f1 /etc/group
+
+          echo "Create group 'devops' if not exists"
+          getent group devops || sudo groupadd devops
+
+          echo "Create user 'akhil' and assign to 'devops' group if not exists"
+          id -u akhil &>/dev/null || sudo useradd -g devops akhil
+
+          echo "Create user 'atchyuth' and assign to 'devops' group if not exists"
+          id -u atchyuth &>/dev/null || sudo useradd -g devops atchyuth
+
+          echo "Set password for user 'akhil'"
+          echo "akhil:MySecurePass123" | sudo chpasswd
+
+          echo "Set password for user 'atchyuth'"
+          echo "atchyuth:MySecurePass456" | sudo chpasswd
+
+          echo "Add user 'akhil' to 'devops' group"
+          sudo usermod -aG devops akhil
+
+          echo "Add user 'atchyuth' to 'devops' group"
+          sudo usermod -aG devops atchyuth
+
+          echo "Display groups of user 'akhil'"
+          groups akhil
+
+          echo "Display groups of user 'atchyuth'"
+          groups atchyuth
+
+          echo "Show all users in group 'devops'"
+          getent group devops
+
+          echo "Change primary group of 'akhil' to 'devops'"
+          sudo usermod -g devops akhil
+
+          echo "Rename user 'akhil' to 'akhildev'"
+          id -u akhildev &>/dev/null || sudo usermod -l akhildev akhil
+
+          echo "Rename group 'devops' to 'devsecops'"
+          getent group devsecops || sudo groupmod -n devsecops devops
+
+          echo "Lock user account 'atchyuth'"
+          sudo usermod -L atchyuth
+
+          echo "Unlock user account 'atchyuth'"
+          sudo usermod -U atchyuth
+
+          echo "Force password change on next login for 'akhildev'"
+          sudo chage -d 0 akhildev
+
+          echo "Set account expiration for user 'akhildev'"
+          sudo chage -E 2025-12-31 akhildev
+
+          echo "View password aging info for 'akhildev'"
+          sudo chage -l akhildev
+
+          echo "Delete user 'atchyuth' if exists"
+          id -u atchyuth &>/dev/null && sudo userdel -r atchyuth
+
+          echo "Change primary group of 'akhildev' to 'users'"
+          sudo usermod -g users akhildev
+
+          echo "Delete group 'devsecops' if exists"
+          getent group devsecops && sudo groupdel devsecops
+
+          echo "Add 'akhildev' to sudoers (no password)"
+          echo "akhildev ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/akhildev
+
+          echo "Show sudo permissions of user 'akhildev'"
+          sudo -l -U akhildev
