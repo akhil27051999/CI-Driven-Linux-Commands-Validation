@@ -11,7 +11,7 @@ ls -l
 ls -a
 
 # Change directory
-cd /path/to/directory
+cd
 
 # Go to parent directory
 cd ..
