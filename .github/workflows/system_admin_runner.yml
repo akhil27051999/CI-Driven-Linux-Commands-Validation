@@ -13,19 +13,19 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Execute all sysadmin command files
+      - name: Run All Sysadmin Command Files
         run: |
-          echo "Starting Execution of All Command Files..."
-          find . -type f -name "*.txt" | while read file; do
-            echo "Processing File: $file"
-            while IFS= read -r line || [[ -n "$line" ]]; do
-              # Skip comments and blank lines
-              if [[ -z "$line" || "$line" =~ ^# ]]; then
-                continue
+          echo "🚀 Starting Sysadmin Command Execution..."
+          find . -type f -name "*.txt" | while read -r file; do
+            echo "📄 Executing commands from: $file"
+            grep -Ev '^\s*$|^\s*#' "$file" | while read -r cmd; do
+              echo "▶️ $cmd"
+              bash -c "$cmd"
+              status=$?
+              if [ $status -ne 0 ]; then
+                echo "❌ Command failed with exit code $status"
               fi
-              echo "Running: $line"
-              eval "$line"
-            done < "$file"
-            echo "Completed: $file"
-            echo "------------------------------------"
+            done
+            echo "✅ Completed: $file"
+            echo "----------------------------"
           done
