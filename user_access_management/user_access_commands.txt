@@ -1,4 +1,4 @@
-# Check current logged-in user
+# Show current logged-in user
 whoami
 
 # Display current user ID and group ID
@@ -10,43 +10,43 @@ cut -d: -f1 /etc/passwd
 # Show all groups on the system
 cut -d: -f1 /etc/group
 
-# Create a new group 'devops' (only if not already exists)
-sudo getent group devops || sudo groupadd devops
+# Create a new group 'devops' (only if it doesn't exist)
+getent group devops || sudo groupadd devops
 
-# Create a new user 'akhil' with 'devops' as primary group (only if user doesn't exist)
+# Create a user 'akhil' and assign primary group 'devops' (only if not exists)
 id -u akhil &>/dev/null || sudo useradd -g devops akhil
 
-# Create another user 'atchyuth' with 'devops' as primary group (only if user doesn't exist)
+# Create a user 'atchyuth' and assign primary group 'devops' (only if not exists)
 id -u atchyuth &>/dev/null || sudo useradd -g devops atchyuth
 
-# Set password for user 'akhil' (non-interactive)
+# Set password for user 'akhil' (non-interactive way - if password utility is available)
 echo "akhil:MySecurePass123" | sudo chpasswd
 
-# Set password for user 'atchyuth' (non-interactive)
+# Set password for user 'atchyuth'
 echo "atchyuth:MySecurePass456" | sudo chpasswd
 
-# Add user 'akhil' to group 'devops' (if not already a member)
-groups akhil | grep -q '\bdevops\b' || sudo usermod -aG devops akhil
+# Add 'akhil' to group 'devops' (secondary group)
+sudo usermod -aG devops akhil
 
-# Add user 'atchyuth' to group 'devops' (if not already a member)
-groups atchyuth | grep -q '\bdevops\b' || sudo usermod -aG devops atchyuth
+# Add 'atchyuth' to group 'devops' (secondary group)
+sudo usermod -aG devops atchyuth
 
-# Display groups that user 'akhil' belongs to
+# Show groups user 'akhil' belongs to
 groups akhil
 
-# Display groups that user 'atchyuth' belongs to
+# Show groups user 'atchyuth' belongs to
 groups atchyuth
 
 # Show all users in group 'devops'
 getent group devops
 
-# Change user's primary group to 'devops'
+# Change primary group of 'akhil' to 'devops'
 sudo usermod -g devops akhil
 
-# Rename a user (rename akhil to akhildev) - only if not already renamed
+# Rename user 'akhil' to 'akhildev' (only if 'akhildev' does not exist)
 id -u akhildev &>/dev/null || sudo usermod -l akhildev akhil
 
-# Rename a group (rename devops to devsecops) - only if not already renamed
+# Rename group 'devops' to 'devsecops' (only if 'devsecops' does not exist)
 getent group devsecops || sudo groupmod -n devsecops devops
 
 # Lock user 'atchyuth' account
@@ -55,23 +55,23 @@ sudo usermod -L atchyuth
 # Unlock user 'atchyuth' account
 sudo usermod -U atchyuth
 
-# Expire user password to force change on next login
+# Force password change on next login for 'akhildev'
 sudo chage -d 0 akhildev
 
-# Set account expiration date for user
+# Set account expiration date for 'akhildev'
 sudo chage -E 2025-12-31 akhildev
 
-# View password aging information for user
+# View password aging info for 'akhildev'
 sudo chage -l akhildev
 
-# Delete user 'atchyuth' if exists
+# Delete user 'atchyuth' (only if exists)
 id -u atchyuth &>/dev/null && sudo userdel -r atchyuth
 
-# Delete group 'devsecops' if exists
+# Delete group 'devsecops' (only if no primary users)
 getent group devsecops && sudo groupdel devsecops
 
-# Add user to sudoers file (only if not already added)
-grep -q '^akhildev' /etc/sudoers.d/akhildev || echo "akhildev ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/akhildev
+# Add 'akhildev' to sudoers without password prompt
+echo "akhildev ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/akhildev
 
-# View sudo permissions for a user
+# View sudo permissions for 'akhildev'
 sudo -l -U akhildev
