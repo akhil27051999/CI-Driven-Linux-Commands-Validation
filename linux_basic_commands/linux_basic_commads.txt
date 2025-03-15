@@ -12,27 +12,6 @@ cut -d: -f1 /etc/passwd
 # Show all groups on the system
 cut -d: -f1 /etc/group
 
-# Create user 'akhil' safely, assign to group 'akhil' if it exists
-if getent passwd akhil >/dev/null; then
-  echo "User 'akhil' already exists"
-else
-  if getent group akhil >/dev/null; then
-    sudo useradd -g akhil akhil
-  else
-    sudo useradd akhil
-  fi
-fi
-
-# Create user 'atchyuth' safely, assign to group 'atchyuth' if it exists
-if getent passwd atchyuth >/dev/null; then
-  echo "User 'atchyuth' already exists"
-else
-  if getent group atchyuth >/dev/null; then
-    sudo useradd -g atchyuth atchyuth
-  else
-    sudo useradd atchyuth
-  fi
-fi
 
 # Set password for user 'akhil' (non-interactive)
 echo "akhil:MySecurePass123" | sudo chpasswd
