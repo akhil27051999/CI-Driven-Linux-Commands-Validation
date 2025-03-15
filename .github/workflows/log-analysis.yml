@@ -1,0 +1,76 @@
+name: Log Analysis Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  log-analysis:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Run Log Inspection Commands
+        run: |
+          echo "View system log (most common syslog file)"
+          sudo cat /var/log/syslog || echo "/var/log/syslog not found"
+
+          echo "View authentication logs"
+          sudo cat /var/log/auth.log || echo "/var/log/auth.log not found"
+
+          echo "View kernel log"
+          sudo dmesg | tail -n 50
+
+          echo "View last 50 lines of system log"
+          sudo tail -n 50 /var/log/syslog || echo "/var/log/syslog not found"
+
+          echo "View login attempts and sessions"
+          lastlog
+
+          echo "View failed login attempts"
+          sudo cat /var/log/faillog || echo "/var/log/faillog not found"
+
+          echo "View cron job logs"
+          sudo cat /var/log/cron.log || echo "/var/log/cron.log not found"
+
+          echo "Show recent journal logs"
+          sudo journalctl -n 50 || echo "journalctl not accessible"
+
+          echo "Show boot logs (fallback if boot.log not present)"
+          sudo journalctl -b || echo "boot journal not found"
+
+          echo "Show logs for a specific service (example: sshd)"
+          sudo journalctl -u ssh || echo "No ssh logs available"
+
+          echo "Show logs for previous boot"
+          sudo journalctl -b -1 || echo "No previous boot logs"
+
+          echo "Filter logs by time (last 1 hour)"
+          sudo journalctl --since "1 hour ago" || echo "journalctl not accessible"
+
+          echo "View system logs with priority level (e.g., error)"
+          sudo journalctl -p err -n 20 || echo "journalctl not accessible"
+
+          echo "Show disk usage of /var/log directory"
+          sudo du -sh /var/log
+
+          echo "List all log files in /var/log"
+          ls -lh /var/log
+
+          echo "Compress old logs to save space"
+          sudo gzip /var/log/syslog.1 || echo "No old syslog to compress"
+
+          echo "Remove old compressed logs (example cleanup)"
+          sudo find /var/log -name \"*.gz\" -type f -mtime +30 -exec rm -f {} \; || echo "No old compressed logs to remove"
+
+          echo "Monitor syslog in real time (run for a few seconds)"
+          timeout 5s sudo tail -f /var/log/syslog || echo "/var/log/syslog not found"
+
+          echo "Monitor journal logs in real time (run for a few seconds)"
+          timeout 5s sudo journalctl -f || echo "journalctl -f not accessible"
+
+          echo "Export all journal logs to a file"
+          sudo journalctl > journal_backup.log || echo "journalctl export failed"
