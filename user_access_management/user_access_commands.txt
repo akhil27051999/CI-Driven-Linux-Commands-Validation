@@ -1,3 +1,7 @@
+# ------------------------------
+# USER ACCESS MANAGEMENT COMMANDS
+# ------------------------------
+
 # Check current logged-in user
 whoami
 
@@ -10,6 +14,10 @@ cut -d: -f1 /etc/passwd
 # Show all groups on the system
 cut -d: -f1 /etc/group
 
+# ------------------------------
+# USER CREATION & PASSWORD SETTING
+# ------------------------------
+
 # Create a new user 'akhil'
 sudo useradd akhil
 
@@ -21,6 +29,10 @@ echo "akhil:MySecurePass123" | sudo chpasswd
 
 # Set password for user 'atchyuth' (non-interactive)
 echo "atchyuth:MySecurePass456" | sudo chpasswd
+
+# ------------------------------
+# GROUP CREATION & USER GROUP ASSIGNMENT
+# ------------------------------
 
 # Create a new group 'devops'
 sudo groupadd devops
@@ -40,14 +52,22 @@ groups atchyuth
 # Show all users in group 'devops'
 getent group devops
 
+# ------------------------------
+# MODIFYING USERS AND GROUPS
+# ------------------------------
+
 # Change user's primary group to 'devops'
 sudo usermod -g devops akhil
 
-# Rename a user (rename akhil to akhildev)
+# Rename a user (rename 'akhil' to 'akhildev')
 sudo usermod -l akhildev akhil
 
-# Rename a group (rename devops to devsecops)
+# Rename a group (rename 'devops' to 'devsecops')
 sudo groupmod -n devsecops devops
+
+# ------------------------------
+# ACCOUNT LOCK/UNLOCK & PASSWORD AGING
+# ------------------------------
 
 # Lock user 'atchyuth' account
 sudo usermod -L atchyuth
@@ -64,14 +84,25 @@ sudo chage -E 2025-12-31 akhildev
 # View password aging information for user
 sudo chage -l akhildev
 
+# ------------------------------
+# DELETE USER AND GROUP (SAFE ORDER)
+# ------------------------------
+
 # Delete user 'atchyuth'
 sudo userdel -r atchyuth
 
-# Delete group 'devsecops'
+# Change 'akhildev' primary group to 'users' before group deletion
+sudo usermod -g users akhildev
+
+# Now safely delete group 'devsecops'
 sudo groupdel devsecops
 
-# Add user to sudoers file
+# ------------------------------
+# SUDO PERMISSIONS MANAGEMENT
+# ------------------------------
+
+# Add user 'akhildev' to sudoers file
 echo "akhildev ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/akhildev
 
-# View sudo permissions for a user
+# View sudo permissions for user
 sudo -l -U akhildev
