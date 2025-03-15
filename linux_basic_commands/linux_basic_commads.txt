@@ -1,74 +1,77 @@
-# User Access Management Commands (Updated & Error-Free)
-
-# Check current logged-in user
+# Show current user
 whoami
 
-# Display current user ID and group ID
-id
+# Show current directory
+pwd
 
-# Show all users on the system
-cut -d: -f1 /etc/passwd
+# List files in the current directory
+ls -l
 
-# Show all groups on the system
-cut -d: -f1 /etc/group
+# Create a new directory
+mkdir test_directory
 
+# Navigate into the new directory
+cd test_directory
 
-# Set password for user 'akhil' (non-interactive)
-echo "akhil:MySecurePass123" | sudo chpasswd
+# Create a new file
+touch testfile.txt
 
-# Set password for user 'atchyuth' (non-interactive)
-echo "atchyuth:MySecurePass456" | sudo chpasswd
+# Write some text into the file
+echo "This is a test file created in GitHub Actions" > testfile.txt
 
-# Create a new group 'devops' (only if it doesn't exist)
-getent group devops >/dev/null || sudo groupadd devops
+# Display file content
+cat testfile.txt
 
-# Add user 'akhil' to group 'devops'
-sudo usermod -aG devops akhil
+# Append more content to the file
+echo "Another line added." >> testfile.txt
 
-# Add user 'atchyuth' to group 'devops'
-sudo usermod -aG devops atchyuth
+# Show file content again
+cat testfile.txt
 
-# Display groups that user 'akhil' belongs to
-groups akhil
+# Rename the file
+mv testfile.txt renamed_file.txt
 
-# Display groups that user 'atchyuth' belongs to
-groups atchyuth
+# Copy the file
+cp renamed_file.txt copy_of_file.txt
 
-# Show all users in group 'devops'
-getent group devops
+# List all files again
+ls -l
 
-# Change user's primary group to 'devops'
-sudo usermod -g devops akhil
+# Display disk usage of current directory
+du -sh .
 
-# Rename a user (rename akhil to akhildev)
-sudo usermod -l akhildev akhil
+# Display free disk space
+df -h
 
-# Rename a group (rename devops to devsecops)
-sudo groupmod -n devsecops devops
+# Display current date and time
+date
 
-# Lock user 'atchyuth' account
-sudo usermod -L atchyuth
+# Display calendar
+cal
 
-# Unlock user 'atchyuth' account
-sudo usermod -U atchyuth
+# Show system uptime
+uptime
 
-# Expire user password to force change on next login
-sudo chage -d 0 akhildev
+# Show hostname
+hostname
 
-# Set account expiration date for user
-sudo chage -E 2025-12-31 akhildev
+# Show kernel version
+uname -r
 
-# View password aging information for user
-sudo chage -l akhildev
+# Show system information
+uname -a
 
-# Delete user 'atchyuth' (if exists)
-getent passwd atchyuth && sudo userdel -r atchyuth
+# Display currently running processes
+ps aux | head -10
 
-# Delete group 'devsecops' (if exists and not primary group of user)
-getent group devsecops && sudo groupdel devsecops
+# Sleep command for 2 seconds (simulate a wait)
+sleep 2
 
-# Add user to sudoers file
-echo "akhildev ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/akhildev
+# Remove copied file
+rm copy_of_file.txt
 
-# View sudo permissions for a user
-sudo -l -U akhildev
+# Go one level back
+cd ..
+
+# Remove the directory created
+rm -r test_directory
