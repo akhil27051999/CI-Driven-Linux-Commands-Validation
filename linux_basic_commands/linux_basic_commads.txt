@@ -1,0 +1,122 @@
+# Print current working directory
+pwd
+
+# List files and directories
+ls
+
+# List files with details (permissions, size, etc.)
+ls -l
+
+# List all files including hidden
+ls -a
+
+# Change directory
+cd /path/to/directory
+
+# Go to parent directory
+cd ..
+
+# Create a new directory
+mkdir new_folder
+
+# Create nested directories
+mkdir -p parent_folder/child_folder
+
+# Remove a file
+rm filename.txt
+
+# Remove a directory
+rmdir empty_folder
+
+# Remove a directory and its contents recursively
+rm -r folder_name
+
+# Copy a file
+cp source.txt destination.txt
+
+# Copy a directory recursively
+cp -r source_dir/ destination_dir/
+
+# Move or rename a file/directory
+mv oldname.txt newname.txt
+
+# View file contents
+cat file.txt
+
+# View file contents page by page
+less file.txt
+
+# View first 10 lines of a file
+head file.txt
+
+# View last 10 lines of a file
+tail file.txt
+
+# Create a new empty file
+touch newfile.txt
+
+# Edit a file using nano editor
+nano file.txt
+
+# Edit a file using vi editor
+vi file.txt
+
+# Search a word in file
+grep "text" file.txt
+
+# Count lines, words, and characters in a file
+wc file.txt
+
+# Display disk usage of current directory
+du -sh .
+
+# Display free disk space
+df -h
+
+# Display user ID and group ID
+id
+
+# Check current user
+whoami
+
+# Show all logged-in users
+who
+
+# Display current date and time
+date
+
+# Display calendar
+cal
+
+# Clear terminal screen
+clear
+
+# Shutdown system
+sudo shutdown now
+
+# Reboot system
+sudo reboot
+
+# View system uptime
+uptime
+
+# View system hostname
+hostname
+
+# Check command location
+which ls
+
+# Display command help
+command --help
+
+# View command manual
+man ls
+
+# List command history
+history
+
+# Repeat last command
+!!
+
+# Run a command as superuser
+sudo <command>
