@@ -9,8 +9,8 @@ sudo useradd atchyuth
 sudo userdel atchyuth
 
 # TO CREATE GROUP
-sudo groupdd devops
-sudo groupdel scaler
+sudo groupadd devops
+sudo groupadd scaler
 
 # TO DLETE GROUP 
 sudo groupdel scaler
