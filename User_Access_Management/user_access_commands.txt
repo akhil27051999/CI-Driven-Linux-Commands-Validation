@@ -1,0 +1,36 @@
+# TO CHECK CURRENT USER
+whoami
+
+# TO CREATE USER
+sudo useradd akhil
+sudo useradd atchyuth
+
+# TO CREATE USER PASSWORD
+sudo passwd akhil
+
+# TO CHANGE TO NEW USER 
+su atchyuth
+
+# TO DELETE USER
+sudo userdel atchyuth
+
+# TO CREATE GROUP
+sudo groupdd devops
+sudo groupadd scaler
+
+# TO DLETE GROUP 
+sudo groupdel scaler
+
+# TO ASSIGN USER TO A GROUP
+sudo usermod -aG devops akhil
+
+# TO CHANGE THE OWNERSHIP OF A FILE 
+touch simplefile
+sudo chown akhil:akhil simplefile
+
+# TO CHANGE PERMISSIONS OF A FILE USING NUMERIC EXPRESSION
+sudo chmod 777 simplefile
+
+# TO CHANGE PERMISSIONS OF A FILE USING ALPHABETIC EXPRESSION
+sudo chmod u-rwx simplefile
+
