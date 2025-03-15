@@ -3,14 +3,12 @@ whoami
 
 # TO CREATE USER
 sudo useradd akhil
-sudo useradd atchyuth
 
 # TO DELETE USER
 sudo userdel atchyuth
 
 # TO CREATE GROUP
 sudo groupdd devops
-sudo groupadd scaler
 
 # TO DLETE GROUP 
 sudo groupdel scaler
