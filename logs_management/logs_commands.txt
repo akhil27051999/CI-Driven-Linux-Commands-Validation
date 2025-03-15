@@ -1,0 +1,47 @@
+# View syslog (Debian/Ubuntu)
+cat /var/log/syslog
+
+# View system message log
+cat /var/log/messages
+
+# View authentication log
+cat /var/log/auth.log
+
+# View boot log
+cat /var/log/boot.log
+
+# View dmesg kernel ring buffer
+dmesg
+
+# View current kernel messages
+dmesg | less
+
+# View last N lines of a log
+tail -n 50 /var/log/syslog
+
+# Follow log output in real-time
+tail -f /var/log/syslog
+
+# Search specific term in logs
+grep "error" /var/log/syslog
+
+# Count specific log entries
+grep -c "error" /var/log/syslog
+
+# Archive old logs
+sudo logrotate -f /etc/logrotate.conf
+
+# Clear a log file
+sudo truncate -s 0 /var/log/syslog
+
+# View journal logs (systemd)
+journalctl
+
+# Show logs by service
+journalctl -u apache2
+
+# Show logs from today
+journalctl --since today
+
+# Show logs from a specific date
+journalctl --since "2025-03-01" --until "2025-03-15"
