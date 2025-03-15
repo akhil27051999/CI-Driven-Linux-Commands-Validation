@@ -1,122 +1,85 @@
-# Print current working directory
-pwd
-
-# List files and directories
-ls
-
-# List files with details (permissions, size, etc.)
-ls -l
-
-# List all files including hidden
-ls -a
-
-# Change directory
-cd
-
-# Go to parent directory
-cd ..
-
-# Create a new directory
-mkdir new_folder
-
-# Create nested directories
-mkdir -p parent_folder/child_folder
-
-# Remove a file
-rm filename.txt
-
-# Remove a directory
-rmdir empty_folder
-
-# Remove a directory and its contents recursively
-rm -r folder_name
-
-# Copy a file
-cp source.txt destination.txt
-
-# Copy a directory recursively
-cp -r source_dir/ destination_dir/
-
-# Move or rename a file/directory
-mv oldname.txt newname.txt
-
-# View file contents
-cat file.txt
-
-# View file contents page by page
-less file.txt
-
-# View first 10 lines of a file
-head file.txt
-
-# View last 10 lines of a file
-tail file.txt
-
-# Create a new empty file
-touch newfile.txt
-
-# Edit a file using nano editor
-nano file.txt
-
-# Edit a file using vi editor
-vi file.txt
-
-# Search a word in file
-grep "text" file.txt
-
-# Count lines, words, and characters in a file
-wc file.txt
-
-# Display disk usage of current directory
-du -sh .
-
-# Display free disk space
-df -h
-
-# Display user ID and group ID
-id
-
-# Check current user
+# Check current logged-in user
 whoami
 
-# Show all logged-in users
-who
+# Display current user ID and group ID
+id
 
-# Display current date and time
-date
+# Show all users on the system
+cut -d: -f1 /etc/passwd
 
-# Display calendar
-cal
+# Show all groups on the system
+cut -d: -f1 /etc/group
 
-# Clear terminal screen
-clear
+# Create a new user 'akhil' (if not exists)
+sudo id -u akhil &>/dev/null || sudo useradd akhil
 
-# Shutdown system
-sudo shutdown now
+# Create another user 'atchyuth' (if not exists)
+sudo id -u atchyuth &>/dev/null || sudo useradd atchyuth
 
-# Reboot system
-sudo reboot
+# Set password for user 'akhil' (non-interactive)
+echo "akhil:MySecurePass123" | sudo chpasswd
 
-# View system uptime
-uptime
+# Set password for user 'atchyuth' (non-interactive)
+echo "atchyuth:MySecurePass456" | sudo chpasswd
 
-# View system hostname
-hostname
+# Create a new group 'devops' (if not exists)
+getent group devops >/dev/null || sudo groupadd devops
 
-# Check command location
-which ls
+# Add user 'akhil' to group 'devops'
+sudo usermod -aG devops akhil
 
-# Display command help
-command --help
+# Add user 'atchyuth' to group 'devops'
+sudo usermod -aG devops atchyuth
 
-# View command manual
-man ls
+# Display groups that user 'akhil' belongs to
+groups akhil
 
-# List command history
-history
+# Display groups that user 'atchyuth' belongs to
+groups atchyuth
 
-# Repeat last command
-!!
+# Show all users in group 'devops'
+getent group devops
 
-# Run a command as superuser
-sudo <command>
+# Change user's primary group to 'devops'
+sudo usermod -g devops akhil
+
+# Rename a user (rename akhil to akhildev, if not already renamed)
+id -u akhildev &>/dev/null || sudo usermod -l akhildev akhil
+
+# Rename a group (rename devops to devsecops, if not already renamed)
+getent group devsecops >/dev/null || sudo groupmod -n devsecops devops
+
+# Lock user 'atchyuth' account
+sudo usermod -L atchyuth
+
+# Unlock user 'atchyuth' account
+sudo usermod -U atchyuth
+
+# Expire user password to force change on next login
+sudo chage -d 0 akhildev
+
+# Set account expiration date for user
+sudo chage -E 2025-12-31 akhildev
+
+# View password aging information for user
+sudo chage -l akhildev
+
+# Delete user 'atchyuth' (ignore if already deleted)
+sudo id -u atchyuth &>/dev/null && sudo userdel -r atchyuth
+
+# Delete group 'devsecops' (ignore if already deleted)
+getent group devsecops && sudo groupdel devsecops
+
+# Add user to sudoers file (if not already present)
+echo "akhildev ALL=(ALL) NOPASSWD:ALL" | sudo tee /etc/sudoers.d/akhildev
+
+# View sudo permissions for a user
+sudo -l -U akhildev
+
+
+
+# Create a working directory in workspace
+mkdir -p ./workspace_logs
+
+# Store sample user report
+echo "User Access Management Completed Successfully" > ./workspace_logs/user_report.txt
