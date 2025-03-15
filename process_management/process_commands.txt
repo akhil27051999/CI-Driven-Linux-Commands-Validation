@@ -1,0 +1,45 @@
+# Show all running processes
+ps aux
+
+# Show process tree
+pstree
+
+# Show top CPU/memory-consuming processes
+top
+
+# Interactive process viewer
+htop
+
+# Kill a process by PID
+kill <pid>
+
+# Kill a process by name
+pkill firefox
+
+# Force kill a process
+kill -9 <pid>
+
+# Search for a process
+ps aux | grep apache
+
+# Start a process in background
+command &
+
+# Bring background process to foreground
+fg
+
+# Stop a running process
+Ctrl + C
+
+# Suspend a process (Ctrl + Z)
+# Resume a suspended process in background
+bg
+
+# List background jobs
+jobs
+
+# Monitor process stats with PID
+pidstat -p <pid>
+
+# Show CPU usage per process
+ps -eo pid,ppid,cmd,%mem,%cpu --sort=-%mem | head
