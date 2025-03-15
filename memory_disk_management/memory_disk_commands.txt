@@ -64,9 +64,6 @@ sudo lshw -short -C memory
 # Check filesystem disk space usage (human-readable)
 sudo df -Th
 
-# Check disk health (SMART info - if available)
-sudo smartctl -a /dev/sda
-
 # List mounted file systems in use
 findmnt
 
