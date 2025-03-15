@@ -1,9 +1,6 @@
 # View syslog (Debian/Ubuntu)
 cat /var/log/syslog
 
-# View system message log
-cat /var/log/messages
-
 # View authentication log
 cat /var/log/auth.log
 
