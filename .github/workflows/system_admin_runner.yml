@@ -1,0 +1,77 @@
+name: System Admin Runner
+
+on:
+  push:
+    paths:
+      - '**/*.txt'
+  workflow_dispatch:
+
+jobs:
+  sysadmin-runner:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Execute Linux Basic Commands
+        if: ${{ hashFiles('linux_basic_commands/linux_basic_commands.txt') != '' }}
+        run: |
+          echo "💻 Executing Linux Basic Commands..."
+          grep -Ev '^\s*$|^\s*#' linux_basic_commands/linux_basic_commands.txt | while read -r cmd; do
+            echo "▶️ $cmd"
+            bash -c "$cmd"
+          done
+
+      - name: Execute User Access Management Commands
+        if: ${{ hashFiles('user_access_management/user_access_commands.txt') != '' }}
+        run: |
+          echo "🔐 Executing User Access Commands..."
+          grep -Ev '^\s*$|^\s*#' user_access_management/user_access_commands.txt | while read -r cmd; do
+            echo "▶️ $cmd"
+            bash -c "$cmd"
+          done
+
+      - name: Execute Logs Management Commands
+        if: ${{ hashFiles('logs_management/logs_management_commands.txt') != '' }}
+        run: |
+          echo "📝 Executing Logs Management Commands..."
+          grep -Ev '^\s*$|^\s*#' logs_management/logs_management_commands.txt | while read -r cmd; do
+            echo "▶️ $cmd"
+            bash -c "$cmd"
+          done
+
+      - name: Execute Process Management Commands
+        if: ${{ hashFiles('process_management/process_management_commands.txt') != '' }}
+        run: |
+          echo "⚙️ Executing Process Management Commands..."
+          grep -Ev '^\s*$|^\s*#' process_management/process_management_commands.txt | while read -r cmd; do
+            echo "▶️ $cmd"
+            bash -c "$cmd"
+          done
+
+      - name: Execute Memory Management Commands
+        if: ${{ hashFiles('memory_management/memory_management_commands.txt') != '' }}
+        run: |
+          echo "🧠 Executing Memory Management Commands..."
+          grep -Ev '^\s*$|^\s*#' memory_management/memory_management_commands.txt | while read -r cmd; do
+            echo "▶️ $cmd"
+            bash -c "$cmd"
+          done
+
+      - name: Execute Network Management Commands
+        if: ${{ hashFiles('network_management/network_management_commands.txt') != '' }}
+        run: |
+          echo "🌐 Executing Network Management Commands..."
+          grep -Ev '^\s*$|^\s*#' network_management/network_management_commands.txt | while read -r cmd; do
+            echo "▶️ $cmd"
+            bash -c "$cmd"
+          done
+
+      - name: Execute Package Management Commands
+        if: ${{ hashFiles('package_management/package_management_commands.txt') != '' }}
+        run: |
+          echo "📦 Executing Package Management Commands..."
+          grep -Ev '^\s*$|^\s*#' package_management/package_management_commands.txt | while read -r cmd; do
+            echo "▶️ $cmd"
+            bash -c "$cmd"
+          done
