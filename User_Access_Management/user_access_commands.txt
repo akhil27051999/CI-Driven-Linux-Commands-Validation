@@ -10,6 +10,7 @@ sudo userdel atchyuth
 
 # TO CREATE GROUP
 sudo groupdd devops
+sudo groupdel scaler
 
 # TO DLETE GROUP 
 sudo groupdel scaler
