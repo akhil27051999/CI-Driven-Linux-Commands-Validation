@@ -14,7 +14,7 @@ jobs:                              # Define one or more jobs
       - name: Checkout repository  # Step 1: Checkout code
         uses: actions/checkout@v3  # Uses a pre-defined GitHub Action (v3 of checkout)
 
-      - name: Run Log Inspection Commands   # Step 2: Your custom commands
+      - name: Run Log Inspection Commands   # Step 2: Your custom name, The name: is just a label and we can run a step without the name: label
         run: |                              # Use "run" for inline shell commands
           echo "View system log (most common syslog file)"
           sudo cat /var/log/syslog || echo "/var/log/syslog not found"
