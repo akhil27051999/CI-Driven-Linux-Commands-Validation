@@ -1,22 +1,21 @@
-name: Log Analysis Workflow
+name: Log Analysis Workflow        # 'name' of the workflow
 
-on:
-  push:
-    branches:
+on:                                
+  push:                            
+    branches:                      # trigger this workflow when a "push occurs on branches" 
       - main
     paths:
-      - '.github/workflows/log-analysis.yml'
+      - '.github/workflows/log-analysis.yml'   # ...and only if the pushed file path matches
 
-jobs:
-  log-analysis:
-    runs-on: ubuntu-latest
+jobs:                              # Define one or more jobs
+  log-analysis:                    # 'name' of the job
+    runs-on: ubuntu-latest         # Define the environment (OS runner) to execute this job
+    steps:                         # Steps inside this job — run one by one
+      - name: Checkout repository  # Step 1: Checkout code
+        uses: actions/checkout@v3  # Uses a pre-defined GitHub Action (v3 of checkout)
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
-
-      - name: Run Log Inspection Commands
-        run: |
+      - name: Run Log Inspection Commands   # Step 2: Your custom commands
+        run: |                              # Use "run" for inline shell commands
           echo "View system log (most common syslog file)"
           sudo cat /var/log/syslog || echo "/var/log/syslog not found"
 
