@@ -2,10 +2,10 @@ name: Log Analysis Workflow        # 'name' of the workflow
 
 on:                                
   push:                            
-    branches:                      # trigger this workflow when a "push occurs on branches" 
+    branches:                      # trigger/run this workflow when a "push occurs on branches" 
       - main
     paths:
-      - '.github/workflows/log-analysis.yml'   # ...and only if the pushed file path matches
+      - '.github/workflows/log-analysis.yml'   # ...and only if the pushed file path matches (optional)
 
 jobs:                              # Define one or more jobs
   log-analysis:                    # 'name' of the job
