@@ -45,7 +45,6 @@ Automation-testing-of-linux-command/
   3. Execute each command one by one.
   4. Display command outputs and errors.
   5. Show a success/failure message after each command.
-
 ---
 
 ## 🚦 Workflow Triggers
@@ -57,7 +56,7 @@ Automation-testing-of-linux-command/
 
 ---
 
-## ✨ Sample Workflow - sysadmin_runner.yml
+## ✨ Sample Workflow
 
 ```yaml
 name: Linux Sysadmin Command Runner
@@ -104,7 +103,6 @@ jobs:
 📦 Package Management	Install, remove, update software packages
 🔄 Process Management	Manage processes, kill, background jobs, resource usage
 ⚙️ Basic Linux Commands	Disk usage, file permissions, service status, directories
-
 ```
 
 ---
@@ -117,7 +115,6 @@ jobs:
 📚 Prepare for Linux/DevOps job interviews.
 👨‍💻 Practice shell scripting in a controlled environment.
 📊 Showcase it in your resume/GitHub portfolio.
-
 ```
 ---
 
@@ -129,7 +126,6 @@ jobs:
 🔀 Push changes to trigger the workflow automatically.
 ⚙️ Or, go to GitHub Actions and click “Run Workflow” manually.
 📊 Check the execution results under the Actions tab.
-
 ```
 ---
 
