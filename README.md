@@ -76,18 +76,18 @@ jobs:
 
       - name: Run All Sysadmin Command Files
         run: |
-          echo "🚀 Starting Sysadmin Command Execution..."
+          echo " Starting Sysadmin Command Execution..."
           find . -type f -name "*.txt" | while read -r file; do
-            echo "📄 Executing commands from: $file"
+            echo " Executing commands from: $file"
             grep -Ev '^\s*$|^\s*#' "$file" | while read -r cmd; do
-              echo "▶️ $cmd"
+              echo " $cmd"
               bash -c "$cmd"
               status=$?
               if [ $status -ne 0 ]; then
-                echo "❌ Command failed with exit code $status"
+                echo " Command failed with exit code $status"
               fi
             done
-            echo "✅ Completed: $file"
+            echo " Completed: $file"
             echo "----------------------------"
           done
 ```
