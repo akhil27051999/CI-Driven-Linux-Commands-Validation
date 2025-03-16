@@ -11,7 +11,7 @@ jobs:                              # Define one or more jobs
   log-analysis:                    # 'name' of the job
     runs-on: ubuntu-latest         # Define the environment (OS runner) to execute this job
     steps:                         # Steps inside this job — run one by one
-      - name: Checkout repository  # Step 1: Checkout code
+      - name: Checkout repository  # Step 1: Checkout code in the file
         uses: actions/checkout@v3  # Uses a pre-defined GitHub Action (v3 of checkout)
 
       - name: Run Log Inspection Commands   # Step 2: Your custom name, The name: is just a label and we can run a step without the name: label
