@@ -33,10 +33,8 @@ Automation-testing-of-linux-command/
         ├── system_resource_check.yml
         ├── test_shell_commands.yml
         ├── user_group_management_workflow.yml
+
 ```
-
----
-
 ---
 
 ## ⚙️ How It Works
@@ -93,58 +91,57 @@ jobs:
             echo "✅ Completed: $file"
             echo "----------------------------"
           done
-
+```
 
 ---
 ## 📜 Commands Categories
-Category	Description
-🧑‍💼 User Access Management	Create users, modify groups, manage sudoers, change passwords
+```
+    Category	         Description
+👨‍🦱 User Access Management Create users, modify groups, manage sudoers, change passwords
 📂 Logs Management	Analyze logs, view dmesg, journalctl, boot logs
 💾 Memory Management	Check memory/swap usage, buffers, cache, top/htop
 🌐 Network Management	Check IPs, ping, DNS, traceroute, netstat, ss
 📦 Package Management	Install, remove, update software packages
 🔄 Process Management	Manage processes, kill, background jobs, resource usage
 ⚙️ Basic Linux Commands	Disk usage, file permissions, service status, directories
----
+
+```
 
 ---
+
+
 ## ✅ Real-World Use Cases
+```
 🔍 Validate your Linux skills in a DevOps CI pipeline.
 🔄 Build automation-ready Linux command modules.
 📚 Prepare for Linux/DevOps job interviews.
 👨‍💻 Practice shell scripting in a controlled environment.
 📊 Showcase it in your resume/GitHub portfolio.
+
+```
 ---
 
----
 ## 🏁 Getting Started
+
+```
 ✅ Fork or Clone the repository.
 📝 Add or modify commands in the relevant .txt file.
 🔀 Push changes to trigger the workflow automatically.
 ⚙️ Or, go to GitHub Actions and click “Run Workflow” manually.
 📊 Check the execution results under the Actions tab.
+
 ```
+---
 
-
-## 🤝 Contribution Guidelines
-Want to improve this project? Awesome! Here’s how:
-
-Add new command categories/folders.
-Improve workflow logic.
-Suggest better execution practices.
-Raise issues or submit pull requests.
-
-``
 ## 🙌 Author
 
----
+```
 **Akhil Thyadi**  
 GitHub: [@akhil27051999](https://github.com/akhil27051999)
+```
 ---
 
-``
 ## 📜 License
-
----
+```
 This project is open source and available under the [MIT License](LICENSE).
 
