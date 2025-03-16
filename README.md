@@ -57,7 +57,7 @@ Automation-testing-of-linux-command/
 
 ---
 
-## ✨ Sample Workflow - `sysadmin_runner.yml`
+## ✨ Sample Workflow - sysadmin_runner.yml
 
 ```yaml
 name: Linux Sysadmin Command Runner
