@@ -131,13 +131,11 @@ jobs:
 
 ## 🙌 Author
 
-```
 **Akhil Thyadi**  
 GitHub: [@akhil27051999](https://github.com/akhil27051999)
-```
+
 ---
 
 ## 📜 License
-```
 This project is open source and available under the [MIT License](LICENSE).
 
