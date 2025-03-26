@@ -64,7 +64,6 @@ When a `.txt` file is pushed or manually triggered, GitHub Actions will:
 - 📦 Package Management: Install, remove, update software packages                    
 - 🔄 Process Management: Manage processes, kill, background jobs, resource usage    
 
-```
 
 ## ✅ Real-World Use Cases
 
