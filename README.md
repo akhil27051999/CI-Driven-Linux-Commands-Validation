@@ -10,6 +10,7 @@ Each Linux command category is stored in a separate folder with a corresponding 
 
 ```
 Automation-testing-of-linux-command/
+|
 ├── linux_basic_commands/
 |   └── linux_basic_commands.txt
 ├── logs_management/
