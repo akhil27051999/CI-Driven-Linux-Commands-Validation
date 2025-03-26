@@ -55,7 +55,7 @@ When a `.txt` file is pushed or manually triggered, GitHub Actions will:
 ------------------------------------------------------------------------
 
 ## 📜 Commands Categories
-
+```
 ----------------------------------------------------------------------------------------
 |    Category	        | Description                                                  |
 |--------------------------------------------------------------------------------------|
@@ -67,14 +67,14 @@ When a `.txt` file is pushed or manually triggered, GitHub Actions will:
 |📦 Package Management	| Install, remove, update software packages                    |  
 |🔄 Process Management	| Manage processes, kill, background jobs, resource usage      |
 ----------------------------------------------------------------------------------------
-
+```
 ## ✅ Real-World Use Cases
 
-1. 🔍 Validate your Linux skills in a DevOps CI pipeline.
-2. 🔄 Build automation-ready Linux command modules.
-3. 📚 Prepare for Linux/DevOps job interviews.
-4. 👨‍💻 Practice shell scripting in a controlled environment.
-5. 📊 Showcase it in your resume/GitHub portfolio.
+-🔍 Validate your Linux skills in a DevOps CI pipeline.
+- 🔄 Build automation-ready Linux command modules.
+- 📚 Prepare for Linux/DevOps job interviews.
+- 👨‍💻 Practice shell scripting in a controlled environment.
+- 📊 Showcase it in your resume/GitHub portfolio.
 
 ## 🏁 Getting Started
 
