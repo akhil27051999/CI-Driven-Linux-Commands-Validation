@@ -55,22 +55,20 @@ When a `.txt` file is pushed or manually triggered, GitHub Actions will:
 ------------------------------------------------------------------------
 
 ## 📜 Commands Categories
+
+- ⚙️ Basic Commands    : Disk usage, file permissions, service status, directories    
+- 👨‍🦱 User Management   : Create users, modify groups, manage sudoers, change passwords
+- 📂 Logs Management   : Analyze logs, view dmesg, journalctl, boot logs            
+- 💾 Memory Management : Check memory/swap usage, buffers, cache, top/htop          
+- 🌐 Network Management: Check IPs, ping, DNS, traceroute, netstat, ss              
+- 📦 Package Management: Install, remove, update software packages                    
+- 🔄 Process Management: Manage processes, kill, background jobs, resource usage    
+
 ```
-----------------------------------------------------------------------------------------
-|    Category	        | Description                                                  |
-|--------------------------------------------------------------------------------------|
-|⚙️ Basic Commands	    | Disk usage, file permissions, service status, directories    |
-|👨‍🦱 User Management    | Create users, modify groups, manage sudoers, change passwords|                                                            |
-|📂 Logs Management  	| Analyze logs, view dmesg, journalctl, boot logs              |
-|💾 Memory Management	| Check memory/swap usage, buffers, cache, top/htop            |
-|🌐 Network Management	| Check IPs, ping, DNS, traceroute, netstat, ss                |
-|📦 Package Management	| Install, remove, update software packages                    |  
-|🔄 Process Management	| Manage processes, kill, background jobs, resource usage      |
-----------------------------------------------------------------------------------------
-```
+
 ## ✅ Real-World Use Cases
 
--🔍 Validate your Linux skills in a DevOps CI pipeline.
+- 🔍 Validate your Linux skills in a DevOps CI pipeline.
 - 🔄 Build automation-ready Linux command modules.
 - 📚 Prepare for Linux/DevOps job interviews.
 - 👨‍💻 Practice shell scripting in a controlled environment.
