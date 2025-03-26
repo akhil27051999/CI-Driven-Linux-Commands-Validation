@@ -93,7 +93,7 @@ When a `.txt` file is pushed or manually triggered, GitHub Actions will:
 ```
 ## ✍️ Author
 ```
-**Akhil Thyadi**  
+Akhil Thyadi
 GitHub: [@akhil27051999](https://github.com/akhil27051999)
 
 ```
