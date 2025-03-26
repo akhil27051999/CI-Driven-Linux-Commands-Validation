@@ -37,7 +37,6 @@ Automation-testing-of-linux-command/
 
 ```
 ## ⚙️ How It Works
-```
 
 When a `.txt` file is pushed or manually triggered, GitHub Actions will:
   1. Read all lines from the file.
@@ -46,9 +45,8 @@ When a `.txt` file is pushed or manually triggered, GitHub Actions will:
   4. Display command outputs and errors.
   5. Show a success/failure message after each command.
 
-```
 ## 🚦 Workflow Triggers
-```
+
 ------------------------------------------------------------------------
 | Trigger Type        | Description                                    |
 |---------------------|------------------------------------------------|
@@ -56,49 +54,42 @@ When a `.txt` file is pushed or manually triggered, GitHub Actions will:
 | `workflow_dispatch` | Manual trigger from GitHub UI                  |
 ------------------------------------------------------------------------
 
-
-```
 ## 📜 Commands Categories
-```
+
 ----------------------------------------------------------------------------------------
 |    Category	        | Description                                                  |
 |--------------------------------------------------------------------------------------|
-|⚙️ Basic Commands	| Disk usage, file permissions, service status, directories    |
+|⚙️ Basic Commands	    | Disk usage, file permissions, service status, directories    |
 |👨‍🦱 User Management    | Create users, modify groups, manage sudoers, change passwords|                                                            |
-|📂 Logs Management	| Analyze logs, view dmesg, journalctl, boot logs              |
+|📂 Logs Management  	| Analyze logs, view dmesg, journalctl, boot logs              |
 |💾 Memory Management	| Check memory/swap usage, buffers, cache, top/htop            |
 |🌐 Network Management	| Check IPs, ping, DNS, traceroute, netstat, ss                |
 |📦 Package Management	| Install, remove, update software packages                    |  
 |🔄 Process Management	| Manage processes, kill, background jobs, resource usage      |
 ----------------------------------------------------------------------------------------
-```
 
-``
 ## ✅ Real-World Use Cases
-```
-🔍 Validate your Linux skills in a DevOps CI pipeline.
-🔄 Build automation-ready Linux command modules.
-📚 Prepare for Linux/DevOps job interviews.
-👨‍💻 Practice shell scripting in a controlled environment.
-📊 Showcase it in your resume/GitHub portfolio.
 
-```
+1. 🔍 Validate your Linux skills in a DevOps CI pipeline.
+2. 🔄 Build automation-ready Linux command modules.
+3. 📚 Prepare for Linux/DevOps job interviews.
+4. 👨‍💻 Practice shell scripting in a controlled environment.
+5. 📊 Showcase it in your resume/GitHub portfolio.
+
 ## 🏁 Getting Started
-```
-✅ Fork or Clone the repository.
-📝 Add or modify commands in the relevant .txt file.
-🔀 Push changes to trigger the workflow automatically.
-⚙️ Or, go to GitHub Actions and click “Run Workflow” manually.
-📊 Check the execution results under the Actions tab.
 
-```
+- ✅ Fork or Clone the repository.
+- 📝 Add or modify commands in the relevant .txt file.
+- 🔀 Push changes to trigger the workflow automatically.
+- ⚙️ Or, go to GitHub Actions and click “Run Workflow” manually.
+- 📊 Check the execution results under the Actions tab.
+
 ## ✍️ Author
-```
-Akhil Thyadi
-GitHub: [@akhil27051999](https://github.com/akhil27051999)
 
-```
+- Akhil Thyadi
+- GitHub: [@akhil27051999](https://github.com/akhil27051999)
+
 ## 📜 License
-```
+
 This project is open source and available under the [MIT License](LICENSE).
 
