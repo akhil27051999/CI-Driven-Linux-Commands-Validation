@@ -11,28 +11,28 @@ Each Linux command category is stored in a separate folder with a corresponding 
 ```
 Automation-testing-of-linux-command/
 ├── linux_basic_commands/
-├   ├── linux_basic_commands.txt
+|   └── linux_basic_commands.txt
 ├── logs_management/
-│   ├── logs_commands.txt
+│   └── logs_commands.txt
 ├── memory_disk_management/
-│   ├── memory_disk_commands.txt 
+│   └── memory_disk_commands.txt 
 ├── network_management/
-│   ├── network_commands.txt
+│   └── network_commands.txt
 ├── package_management/
-├   ├── package_management_commands.txt
+|   └── package_management_commands.txt
 ├── process_management/
-│   ├── process_commands.txt
+│   └── process_commands.txt
 ├── user_access_management/
-│   ├── user_access_commands.txt 
-├── .github/
-    ├── workflows
+│   └── user_access_commands.txt 
+└── .github/
+    └── workflows
         ├── log_analysis.yml
         ├── network_diagnositcs.yml
         ├── package_management_workflow.yml
         ├── process_management_workflow.yml
         ├── system_resource_check.yml
         ├── test_shell_commands.yml
-        ├── user_group_management_workflow.yml
+        └── user_group_management_workflow.yml
 
 ```
 ## ⚙️ How It Works
