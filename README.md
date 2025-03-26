@@ -25,7 +25,7 @@ Automation-testing-of-linux-command/
 ├── user_access_management/
 │   ├── user_access_commands.txt 
 ├── .github/
-│   ├── workflows
+    ├── workflows
         ├── log_analysis.yml
         ├── network_diagnositcs.yml
         ├── package_management_workflow.yml
@@ -48,25 +48,28 @@ When a `.txt` file is pushed or manually triggered, GitHub Actions will:
 ```
 ## 🚦 Workflow Triggers
 ```
+------------------------------------------------------------------------
 | Trigger Type        | Description                                    |
 |---------------------|------------------------------------------------|
 | `push`              | When `.txt` command files are pushed or changed|
 | `workflow_dispatch` | Manual trigger from GitHub UI                  |
-
+------------------------------------------------------------------------
 
 
 ```
 ## 📜 Commands Categories
 ```
-    Category	         Description
-⚙️ Basic Commands	Disk usage, file permissions, service status, directories
-👨‍🦱 User  Management     Create users, modify groups, manage sudoers, change passwords
-📂 Logs Management	Analyze logs, view dmesg, journalctl, boot logs
-💾 Memory Management	Check memory/swap usage, buffers, cache, top/htop
-🌐 Network Management	Check IPs, ping, DNS, traceroute, netstat, ss
-📦 Package Management	Install, remove, update software packages
-🔄 Process Management	Manage processes, kill, background jobs, resource usage
-
+----------------------------------------------------------------------------------------
+|    Category	        | Description                                                  |
+|--------------------------------------------------------------------------------------|
+|⚙️ Basic Commands	| Disk usage, file permissions, service status, directories    |
+|👨‍🦱 User Management    | Create users, modify groups, manage sudoers, change passwords|                                                            |
+|📂 Logs Management	| Analyze logs, view dmesg, journalctl, boot logs              |
+|💾 Memory Management	| Check memory/swap usage, buffers, cache, top/htop            |
+|🌐 Network Management	| Check IPs, ping, DNS, traceroute, netstat, ss                |
+|📦 Package Management	| Install, remove, update software packages                    |  
+|🔄 Process Management	| Manage processes, kill, background jobs, resource usage      |
+----------------------------------------------------------------------------------------
 ```
 
 ``
