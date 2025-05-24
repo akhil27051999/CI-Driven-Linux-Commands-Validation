@@ -36,6 +36,14 @@ Automation-testing-of-linux-command/
         └── user_group_management_workflow.yml
 
 ```
+## 🏁 Getting Started
+
+- ✅ Fork or Clone the repository.
+- 📝 Add or modify commands in the relevant .txt file.
+- 🔀 Push changes to trigger the workflow automatically.
+- ⚙️ Or, go to GitHub Actions and click “Run Workflow” manually.
+- 📊 Check the execution results under the Actions tab.
+  
 ## ⚙️ How It Works
 
 When a `.txt` file is pushed or manually triggered, GitHub Actions will:
@@ -53,14 +61,6 @@ When a `.txt` file is pushed or manually triggered, GitHub Actions will:
 | `push`              | When `.txt` command files are pushed or changed|
 | `workflow_dispatch` | Manual trigger from GitHub UI                  |
 ------------------------------------------------------------------------
-
-## 🏁 Getting Started
-
-- ✅ Fork or Clone the repository.
-- 📝 Add or modify commands in the relevant .txt file.
-- 🔀 Push changes to trigger the workflow automatically.
-- ⚙️ Or, go to GitHub Actions and click “Run Workflow” manually.
-- 📊 Check the execution results under the Actions tab.
   
 ## 📜 Commands Categories
 
