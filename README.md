@@ -61,7 +61,7 @@ When a `.txt` file is pushed or manually triggered, GitHub Actions will:
 - 🔀 Push changes to trigger the workflow automatically.
 - ⚙️ Or, go to GitHub Actions and click “Run Workflow” manually.
 - 📊 Check the execution results under the Actions tab.
-- 
+  
 ## 📜 Commands Categories
 
 - ⚙️ Basic Commands    : Disk usage, file permissions, service status, directories    
