@@ -4,8 +4,6 @@ This project demonstrates how Linux sysadmin tasks can be automated and tested i
 
 Each Linux command category is stored in a separate folder with a corresponding `.txt` file. These commands are executed automatically when changes are pushed to the repository or manually triggered via GitHub Actions.
 
-
-
 ## 🏗️ Project Structure
 
 ```
@@ -38,13 +36,13 @@ Automation-testing-of-linux-command/
 ```
 ## 🏁 Getting Started
 
-- ✅ Fork or Clone the repository.
-- 📝 Add or modify commands in the relevant .txt file.
-- 🔀 Push changes to trigger the workflow automatically.
-- ⚙️ Or, go to GitHub Actions and click “Run Workflow” manually.
-- 📊 Check the execution results under the Actions tab.
+1. Fork or Clone the repository.
+2. Add or modify commands in the relevant .txt file.
+3. Push changes to trigger the workflow automatically.
+4. Or, go to GitHub Actions and click “Run Workflow” manually.
+5. Check the execution results under the Actions tab.
   
-## ⚙️ How It Works
+## ⚙️How It Works
 
 When a `.txt` file is pushed or manually triggered, GitHub Actions will:
   1. Read all lines from the file.
@@ -72,13 +70,11 @@ When a `.txt` file is pushed or manually triggered, GitHub Actions will:
 - 📦 Package Management: Install, remove, update software packages                    
 - 🔄 Process Management: Manage processes, kill, background jobs, resource usage    
 
-## ✅ Real-World Use Cases
+## Real-World Use Cases
 
 - 🔍 Validate your Linux skills in a DevOps CI pipeline.
 - 🔄 Build automation-ready Linux command modules.
-- 📚 Prepare for Linux/DevOps job interviews.
-- 👨‍💻 Practice shell scripting in a controlled environment.
-- 📊 Showcase it in your resume/GitHub portfolio.
+- 👨‍💻 To Practice shell scripting in a controlled environment.
 
 ## ✍️ Author
 
