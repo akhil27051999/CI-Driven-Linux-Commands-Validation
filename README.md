@@ -53,12 +53,10 @@ When a `.txt` file is pushed or manually triggered, GitHub Actions will:
 
 ## 🚦 Workflow Triggers
 
-------------------------------------------------------------------------
 | Trigger Type        | Description                                    |
 |---------------------|------------------------------------------------|
 | `push`              | When `.txt` command files are pushed or changed|
 | `workflow_dispatch` | Manual trigger from GitHub UI                  |
-------------------------------------------------------------------------
   
 ## 📜 Commands Categories
 
