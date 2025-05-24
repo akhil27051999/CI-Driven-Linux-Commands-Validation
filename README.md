@@ -1,4 +1,4 @@
-# 🚀 Automation Testing of Linux Commands Using GitHub Actions
+# Automation Testing of Linux Commands Using GitHub Actions
 
 This project demonstrates how Linux sysadmin tasks can be automated and tested in a CI/CD environment (like GitHub Actions) — which is a real-world DevOps/Automation scenario.
 
