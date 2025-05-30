@@ -74,10 +74,4 @@ When a `.txt` file is pushed or manually triggered, GitHub Actions will:
 - 🔄 Build automation-ready Linux command modules.
 - 👨‍💻 To Practice shell scripting in a controlled environment.
 
-## ✍️ Author
-
-- Akhil Thyadi
-- GitHub: [@akhil27051999](https://github.com/akhil27051999)
-
-
 
