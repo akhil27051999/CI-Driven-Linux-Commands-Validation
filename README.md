@@ -4,7 +4,7 @@
 ## 🏗️ Project Structure
 
 ```
-Automation-testing-of-linux-command/
+Linux-command/
 |
 ├── linux_basic_commands/
 |   └── linux_basic_commands.txt
