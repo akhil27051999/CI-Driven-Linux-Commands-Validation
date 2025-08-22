@@ -1,8 +1,5 @@
-# Automation Testing of Linux Commands Using GitHub Actions
+# Linux Commands
 
-This project demonstrates how Linux sysadmin tasks can be automated and tested in a CI/CD environment (like GitHub Actions) — which is a real-world DevOps/Automation scenario.
-
-Each Linux command category is stored in a separate folder with a corresponding `.txt` file. These commands are executed automatically when changes are pushed to the repository or manually triggered via GitHub Actions.
 
 ## 🏗️ Project Structure
 
@@ -22,41 +19,8 @@ Automation-testing-of-linux-command/
 ├── process_management/
 │   └── process_commands.txt
 ├── user_access_management/
-│   └── user_access_commands.txt 
-└── .github/
-    └── workflows
-        ├── log_analysis.yml
-        ├── network_diagnositcs.yml
-        ├── package_management_workflow.yml
-        ├── process_management_workflow.yml
-        ├── system_resource_check.yml
-        ├── test_shell_commands.yml
-        └── user_group_management_workflow.yml
-
+    └── user_access_commands.txt
 ```
-## 🏁 Getting Started
-
-1. Fork or Clone the repository.
-2. Add or modify commands in the relevant .txt file.
-3. Push changes to trigger the workflow automatically.
-4. Or, go to GitHub Actions and click “Run Workflow” manually.
-5. Check the execution results under the Actions tab.
-  
-## ⚙️How It Works
-
-When a `.txt` file is pushed or manually triggered, GitHub Actions will:
-  1. Read all lines from the file.
-  2. Skip blank lines or lines starting with `#` (comments).
-  3. Execute each command one by one.
-  4. Display command outputs and errors.
-  5. Show a success/failure message after each command.
-
-## 🚦 Workflow Triggers
-
-| Trigger Type        | Description                                    |
-|---------------------|------------------------------------------------|
-| `push`              | When `.txt` command files are pushed or changed|
-| `workflow_dispatch` | Manual trigger from GitHub UI                  |
   
 ## 📜 Commands Categories
 
